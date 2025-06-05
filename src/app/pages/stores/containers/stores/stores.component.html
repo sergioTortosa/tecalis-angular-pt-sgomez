@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <ng-container *ngIf="stores$ | async as stores; else loading">
+      <div *ngIf="stores.length === 0" class="text-center text-white">
+        No hay tiendas disponibles
+      </div>
+      <div class="col-md-4 mb-4" *ngFor="let store of stores">
+        <app-store-card
+          [store]="store"
+          (click)="onStoreClick(store)">
+        </app-store-card>
+      </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="text-center text-white">Cargando tiendas...</div>
+    </ng-template>
+  </div>
+</div>

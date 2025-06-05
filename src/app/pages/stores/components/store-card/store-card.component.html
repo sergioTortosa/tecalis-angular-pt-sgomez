@@ -1,0 +1,15 @@
+<div class="card card-profile" style="cursor: pointer;" (click)="onCardClick($event)">
+  <div class="card-avatar">
+    <img [src]="store.image_background" alt="{{ store.name }}" class="img-fluid" />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ store.name }}</h5>
+    <p class="card-description">
+      Juegos disponibles: {{ store.games_count }}
+    </p>
+    <a class="btn btn-primary btn-round btn-sm" [href]="getStoreUrl()" target="_blank"
+      (click)="$event.stopPropagation()">
+      Visitar tienda
+    </a>
+  </div>
+</div>
