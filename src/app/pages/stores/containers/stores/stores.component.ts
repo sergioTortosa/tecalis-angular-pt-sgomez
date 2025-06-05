@@ -16,7 +16,7 @@ export class StoresComponent {
   private searchTerm = new BehaviorSubject('');
 
   constructor(private storeManager: StoreManager, private router: Router) {
-     const allStores$ = this.storeManager.getAllStores();
+    const allStores$ = this.storeManager.getAllStores();
 
     this.stores$ = combineLatest([
       allStores$,
