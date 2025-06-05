@@ -1,0 +1,17 @@
+.description.collapsed {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: initial;
+  line-clamp: initial;
+  overflow: visible;
+}
+
+#show-more-btn-text {
+  color: #344675;
+}

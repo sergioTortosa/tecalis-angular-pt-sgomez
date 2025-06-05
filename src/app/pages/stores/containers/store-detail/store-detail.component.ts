@@ -53,7 +53,7 @@ export class StoreDetailComponent {
     const initialState: Partial<GameModalComponent> = { gameId };
     this.modalService.show(GameModalComponent, {
       initialState,
-      class: 'modal-dialog-centered modal-lg'
+      class: 'modal-dialog-centered modal-md'
     });
   }
 

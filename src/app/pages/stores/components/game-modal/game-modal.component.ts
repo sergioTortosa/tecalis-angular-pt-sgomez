@@ -1,7 +1,7 @@
 import { BsModalRef } from "ngx-bootstrap/modal";
 import { StoreManager } from "../../managers/store.manager";
 import { GameDetail } from "src/app/models/rawg.interfaces";
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: 'app-game-modal',
@@ -13,6 +13,9 @@ export class GameModalComponent implements OnInit {
   public gameId!: number;
   game!: GameDetail;
   imageUrls: string[] = [];
+  @ViewChild('descEl') descEl!: ElementRef;
+  isExpanded = false;
+  shouldShowToggle = true;
 
   constructor(
     public bsModalRef: BsModalRef,
@@ -29,6 +32,10 @@ export class GameModalComponent implements OnInit {
         ].filter(Boolean);
       });
     }
+  }
+
+  toggleDescription() {
+    this.isExpanded = !this.isExpanded;
   }
 
   close(): void {

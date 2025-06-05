@@ -14,7 +14,13 @@
         </carousel>
     </div>
 
-    <div class="mb-4" [innerHTML]="game?.description"></div>
+    <div class="mb-4">
+        <div class="description" [class.collapsed]="!isExpanded" #descEl [innerHTML]="game?.description" ></div>
+
+        <button id="show-more-btn" *ngIf="shouldShowToggle" (click)="toggleDescription()" class="btn btn-link p-0 mt-2" >
+            <span id="show-more-btn-text">{{ isExpanded ? 'Show less' : 'Show more' }}</span>
+        </button>
+    </div>
 
     <p><strong>Fecha de lanzamiento:</strong> {{ game?.released | date }}</p>
 
