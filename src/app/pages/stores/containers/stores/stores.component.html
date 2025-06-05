@@ -1,3 +1,12 @@
+<div class="container mt-3">
+  <input
+    type="text"
+    class="form-control mb-4"
+    placeholder="Buscar tienda..."
+    (input)="onSearch($event.target.value)"
+  />
+</div>
+
 <div class="container mt-5">
   <div class="row">
     <ng-container *ngIf="stores$ | async as stores; else loading">
